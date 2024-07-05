@@ -1,5 +1,6 @@
 package joaovitorlopes.com.github.forum_hub_api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import joaovitorlopes.com.github.forum_hub_api.domain.comment.Comment;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/topic")
+@SecurityRequirement(name = "bearer-key")
 public class TopicController {
 
     private final CommentRepository commentRepository;
